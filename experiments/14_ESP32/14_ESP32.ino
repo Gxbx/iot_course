@@ -1,7 +1,7 @@
 #include <WiFi.h>
 
-const char* ssid = "TP-Link_3A15";
-const char* password = "12345678910";
+const char* ssid = "Emprendedores";
+const char* password = "AxtVvm13";
 
 String EncryptionType(wifi_auth_mode_t encryptionType)
 {
