@@ -31,9 +31,10 @@ void loop()
     if (WiFi.status() == WL_CONNECTED)
     {
         HTTPClient http;
-        http.begin("https://iot-course-a2bfd.firebaseio.com/data");
-        //http.addHeader("Content-Type", "text/plain");
-        int httpCode = http.GET();
+        http.begin("https://iot-course-a2bfd.firebaseio.com/data.json");
+        http.addHeader("Content-Type", "text/plain");
+        int httpCode = http.POST("{ \"nombre\" : \"Gabriel\"}");
+        //int httpCode = http.GET();
 
         if (httpCode >=200 && httpCode <206)
         {
