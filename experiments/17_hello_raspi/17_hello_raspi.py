@@ -4,7 +4,8 @@ import time
 gpio.setmode(gpio.BCM)
 gpio.setup(23, gpio.IN, pull_up_down = gpio.PUD_UP)
 gpio.setup(24, gpio.OUT)
-
+gpio.output(24, True)
+time.sleep(5)
 while True:
     input_state = gpio.input(23)
     if input_state == False:
