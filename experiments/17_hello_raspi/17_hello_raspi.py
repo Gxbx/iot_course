@@ -2,8 +2,15 @@ import RPi.GPIO as gpio
 import time
 #Esto es para iniciar la board
 gpio.setmode(gpio.BOARD)
-gpio.setup(12, gpio.OUT)
-gpio.output(12, True)
-time.sleep(20)
-gpio.output(12, False)
-gpio.cleanup(12)
+gpio.setup(24, gpio.OUT)
+gpio.setup(23, gpio.IN)
+# gpio.output(24, True)
+# time.sleep(20)
+# gpio.output(24, False)
+# gpio.cleanup(24)
+while True:
+    input_state = GPIO.input(23)
+    if input_state == False:
+        gpio.output(24, True)
+    else:
+        gpio.output(24, False)
