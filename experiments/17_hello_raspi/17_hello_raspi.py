@@ -9,7 +9,7 @@ gpio.setup(23, gpio.IN)
 # gpio.output(24, False)
 # gpio.cleanup(24)
 while True:
-    input_state = GPIO.input(23)
+    input_state = gpio.input(23)
     if input_state == False:
         gpio.output(24, True)
     else:
